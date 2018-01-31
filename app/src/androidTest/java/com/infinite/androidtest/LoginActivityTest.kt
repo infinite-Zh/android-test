@@ -7,12 +7,9 @@ import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import com.infinite.androidtest.repository.LoginDataSource
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mock
 
 /**
  * Created by kfzhangxu on 2018/1/31.
@@ -20,6 +17,8 @@ import org.mockito.Mock
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {
 
+    @get:Rule
+    val rule=ActivityTestRule<LoginActivity>(LoginActivity::class.java)
     @Test
     fun performLogin() {
         onView(withId(R.id.email)).perform(typeText("abcdefghijklmnopqrstuvwxyz"))
