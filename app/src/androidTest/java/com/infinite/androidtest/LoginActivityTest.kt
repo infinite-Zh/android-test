@@ -19,20 +19,9 @@ import org.mockito.Mock
  */
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {
-    @get:Rule
-    public val rule = ActivityTestRule(LoginActivity::class.java)
-
-    @Mock
-    public lateinit var loginDataSource: LoginDataSource
-
-    @Before
-    public fun setUp() {
-        loginDataSource = LoginDataSource()
-    }
 
     @Test
     fun performLogin() {
-//        R.id.email perform typeText("")
         onView(withId(R.id.email)).perform(typeText("abcdefghijklmnopqrstuvwxyz"))
         onView(withId(R.id.email)).check(matches(withText("abcdefghijklmnopqrstuvwxyz")))
     }
