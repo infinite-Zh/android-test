@@ -1,11 +1,5 @@
 package com.infinite.androidtest.repository
 
-import android.support.v4.content.ContextCompat
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
-
 /**
  * Created by kfzhangxu on 2018/1/31.
  */
