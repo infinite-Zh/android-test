@@ -5,16 +5,25 @@ import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
+import android.support.test.filters.LargeTest
 import android.support.test.runner.AndroidJUnit4
 import org.junit.Test
 import org.junit.runner.RunWith
+import android.support.test.rule.ActivityTestRule
+import org.junit.Rule
+
+
 
 /**
  * Created by kfzhangxu on 2018/1/31.
  */
 @RunWith(AndroidJUnit4::class)
+@LargeTest
 class LoginActivityTest {
 
+    @get:Rule
+    public var mActivityRule: ActivityTestRule<*> = ActivityTestRule(
+            LoginActivity::class.java)
     @Test
     fun performLogin() {
         onView(withId(R.id.email)).perform(typeText("abcdefghijklmnopqrstuvwxyz"))
