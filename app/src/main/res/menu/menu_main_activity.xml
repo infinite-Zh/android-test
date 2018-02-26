@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_test_a"
+        android:title="@string/menu_test_a"
+        android:icon="@mipmap/infinite"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_test_b"
+        android:title="@string/menu_test_b"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_test_c"
+        android:title="@string/menu_test_c"
+        app:showAsAction="never" />
+
+
+</menu>

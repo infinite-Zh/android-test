@@ -17,4 +17,7 @@
     <string name="email_illegal">email format illegal</string>
     <string name="hello">hello,android test</string>
     <string name="password_empty">password is empty</string>
+    <string name="menu_test_a">menu_test_a</string>
+    <string name="menu_test_b">menu_test_b</string>
+    <string name="menu_test_c">menu_test_c</string>
 </resources>
