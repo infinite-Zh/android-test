@@ -1,8 +1,7 @@
 package com.infinite.androidtest
 
 import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.scrollTo
-import android.support.test.espresso.action.ViewActions.typeText
+import android.support.test.espresso.action.ViewActions.*
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.matcher.ViewMatchers.withId
@@ -27,5 +26,11 @@ class MainActivityTest {
     @Test
     fun inputLastEidtText() {
         onView(withId(R.id.edit_last)).perform(scrollTo(), typeText("abcdefghijklmnopqrst"))
+    }
+
+    @Test
+    fun testMenuA(){
+        onView(withId(R.id.menu_test_a)).perform(click())
+        onView(withId(R.id.text_menu_a_click)).check(matches(isDisplayed()))
     }
 }
