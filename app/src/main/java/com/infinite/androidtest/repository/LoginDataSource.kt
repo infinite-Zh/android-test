@@ -2,6 +2,7 @@ package com.infinite.androidtest.repository
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.runBlocking
@@ -16,31 +17,32 @@ class LoginDataSource : ILoginDataSource {
 
         object : Thread() {
             override fun run() {
+                Looper.prepare()
                 super.run()
-                Thread.sleep(2000)
-                val handler=MyHandler(callBack)
-                val message=handler.obtainMessage()
+//                Thread.sleep(2000)
+//                val handler=MyHandler(callBack)
+//                val message=handler.obtainMessage()
                 var result:Boolean
                 var msg:String
                 val bundle=Bundle()
                 if (email != "abc@163.com") {
-//                    callBack.callBack(false, "用户名错误")
+                    callBack.callBack(false, "用户名错误")
                     result=false
                     msg="用户名错误"
                     bundle.putBoolean("result",result)
                     bundle.putString("msg",msg)
-                    message.data=bundle
-                    handler.sendMessage(message)
+//                    message.data=bundle
+//                    handler.sendMessage(message)
                     return
                 }
                 if (password != "123abc") {
-//                    callBack.callBack(false, "密码错误")
+                    callBack.callBack(false, "密码错误")
                     result=false
                     msg="密码错误"
                     bundle.putBoolean("result",result)
                     bundle.putString("msg",msg)
-                    message.data=bundle
-                    handler.sendMessage(message)
+//                    message.data=bundle
+//                    handler.sendMessage(message)
                     return
                 }
 
@@ -48,9 +50,9 @@ class LoginDataSource : ILoginDataSource {
                 msg="登陆成功"
                 bundle.putBoolean("result",result)
                 bundle.putString("msg",msg)
-                message.data=bundle
-                handler.sendMessage(message)
-//                callBack.callBack(true, "登陆成功")
+//                message.data=bundle
+//                handler.sendMessage(message)
+                callBack.callBack(true, "登陆成功")
             }
         }.start()
 

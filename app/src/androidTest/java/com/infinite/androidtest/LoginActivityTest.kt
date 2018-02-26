@@ -78,6 +78,6 @@ class LoginActivityTest {
         onView(withId(R.id.email)).perform(typeText("abc@163.com"))
         onView(withId(R.id.password)).perform(typeText("123abc"))
         onView(withId(R.id.email_sign_in_button)).perform(click())
-        onView(withText(R.string.hello)).check(matches(isDisplayed()))
+        onView(withId(R.id.root)).check(matches(isDisplayed()))
     }
 }
